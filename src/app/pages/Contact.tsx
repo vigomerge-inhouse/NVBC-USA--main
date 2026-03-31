@@ -11,7 +11,7 @@ import "swiper/css/effect-fade";
 import countryImg from "../../assets/images/contact-us/country.jpg";
 import countryImg1 from "../../assets/images/contact-us/country1.jpg";
 import formSide from '../../assets/images/contact-us/Gallery-NVBC.jpg';
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/NVBC LOGO.jpg";
 const heroImages = [countryImg, countryImg1];
 
 const contactInfo = [
@@ -253,9 +253,49 @@ export default function Contact() {
           />
         </motion.div>
       </section>
+      <section className="relative pt-10 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center gap-4 lg:gap-12">
+
+          {/* Left Gold Line */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "180px", md: "160px" }} // Responsive width
+            transition={{ duration: 2.2, ease: "easeInOut" }}
+            style={{
+              height: "4px",
+              background: C.gold,
+              opacity: 0.8,
+              borderRadius: "2px"
+            }}
+          />
+
+          {/* Logo Container (Ab ye absolute nahi, flex ka part hai) */}
+          <div className="z-20 shrink-0">
+            <img 
+              src={logo} 
+              alt="Logo"
+              className="h-16 w-auto md:h-32 lg:h-48 object-contain drop-shadow-lg rounded-lg border-t-4 border-b-4 border-amber-800"
+            />
+          </div>
+          
+          {/* Right Gold Line */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "180px", md: "160px" }}
+            transition={{ duration: 2.2, ease: "easeInOut" }}
+            style={{
+              height: "4px",
+              background: C.gold,
+              opacity: 0.8,
+              borderRadius: "2px"
+            }}
+          />
+
+        </div>
+      </section>
           
       {/* Contact Info Cards */}
-      <section className="pt-16 pb-8 px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="pt-10 pb-8 px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-20 overflow-hidden px-4">
           {contactInfo.map(({ Icon, label, value, sub, iconColor, cardBg, borderColor, hoverColor }, i) => (
             <motion.div
@@ -404,13 +444,6 @@ export default function Contact() {
               }}
             >
               SEND US A MESSAGE
-              <div className="absolute top-14 md:top-4 right-8 z-20">
-                <img 
-                  src={logo} 
-                  alt="Northern Virginia Brittany Club Logo"
-                  className="h-18 w-auto md:h-32 lg:h-40 object-contain drop-shadow-lg rounded-lg border-t-4 border-b-4 border-amber-800"
-                />
-              </div>
             </div>
             {submitted ? (
               <motion.div

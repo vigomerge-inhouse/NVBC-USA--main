@@ -12,7 +12,7 @@ import "swiper/css/effect-fade";
 /* ─── Assets ─────────────────────────────────────────────────────── */
 import hero1 from "../../assets/images/gallery/Hero1.jpg";
 import hero2 from "../../assets/images/gallery/Hero2.jpg";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/NVBC LOGO.jpg";
 
 // gallery  shows images
 import shows1 from '../../assets/images/gallery/Gallery or Home Page or Why the Brittany.jpg';
@@ -402,7 +402,7 @@ export default function Gallery() {
               <img 
                 src={logo} 
                 alt="Northern Virginia Brittany Club Logo"
-                className="h-24 w-auto md:h-32 lg:h-40 object-contain drop-shadow-lg rounded-lg border-t-4 border-b-4 border-amber-800"
+                className="h-24 w-auto md:h-32 lg:h-48 object-contain drop-shadow-lg rounded-lg border-t-4 border-b-4 border-amber-800"
               />
             </div>
             {/* Main heading with gold highlight */}

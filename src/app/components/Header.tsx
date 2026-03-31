@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import imgLogo from "../../assets/logo.jpg";
- 
+// import imgLogo from "../../assets/Header logo.jpg";
+import imgLogo from "../../assets/NVBC LG.jpg"; 
+
 const navLinks = [
   { name: "HOME", path: "/" },
   { name: "ABOUT NVBC", path: "/about-nvbc" },
@@ -58,7 +59,7 @@ export function Header() {
               <img
                 src={imgLogo}
                 alt="NVBC Logo"
-                className="w-18 h-18 lg:w-20 lg:h-20 object-contain"
+                className="w-18 h-18 lg:w-20 lg:h-20 object-contain rounded-full"
               />
             </div>
            

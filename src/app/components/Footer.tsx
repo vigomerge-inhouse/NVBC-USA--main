@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-const imgLogo = new URL("../../assets/logo.jpg", import.meta.url).href;
+const imgLogo = new URL("../../assets/NVBC LG.jpg", import.meta.url).href;
 
 const footerLinks = [
   {
@@ -48,7 +48,7 @@ export function Footer() {
               <img
                 src={imgLogo}
                 alt="NVBC Logo"
-                className="w-16 h-16 object-contain"
+                className="w-16 h-16 object-contain rounded-full" 
                 style={{ filter: "drop-shadow(0 0 8px rgba(201,168,76,0.4))" }}
               />
               <div>

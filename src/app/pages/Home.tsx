@@ -1226,7 +1226,7 @@ export default function Home() {
                     gap: "6px",
                   }}
                 >
-                  LEAR MORE <ChevronRight size={11} />
+                  LEARN MORE <ChevronRight size={11} />
                 </div>
               </motion.button>
             ))}
