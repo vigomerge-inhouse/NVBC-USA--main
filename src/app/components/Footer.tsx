@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
-const imgLogo = new URL("../../assets/nvbc logo.png", import.meta.url).href;
+const imgLogo = new URL("../../assets/logo.jpg", import.meta.url).href;
 
 const footerLinks = [
   {
