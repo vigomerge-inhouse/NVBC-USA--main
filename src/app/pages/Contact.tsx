@@ -11,6 +11,7 @@ import "swiper/css/effect-fade";
 import countryImg from "../../assets/images/contact-us/country.jpg";
 import countryImg1 from "../../assets/images/contact-us/country1.jpg";
 import formSide from '../../assets/images/contact-us/Gallery-NVBC.jpg';
+import logo from "../../assets/images/logo.png";
 const heroImages = [countryImg, countryImg1];
 
 const contactInfo = [
@@ -125,134 +126,134 @@ export default function Contact() {
     <div style={{ background: "#FAF9F6", minHeight: "100vh" }}>
       {/* Page Header */}
      {/* Page Header */}
-<section className="relative min-h-screen overflow-hidden flex items-center justify-center">
-  
-  {/* 1. Swiper Background - LOWEST LAYER */}
-  <div className="absolute inset-0 z-0">
-    <Swiper
-      modules={[Autoplay]}
-      effect="fade"
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      loop={true}
-      className="w-full h-full"
-    >
-      {heroImages.map((img, index) => (
-  <SwiperSlide key={index}>
-    <div
-      style={{
-        backgroundImage: `url(${img})`,
-        backgroundSize: "cover",
-        backgroundPosition: index === 0 ? "center center" : "center bottom",  // ← First image center, Second image bottom
-        width: "100%",
-        height: "100%",
-      }}
-    />
-  </SwiperSlide>
-))}
-    </Swiper>
-  </div>
+      <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
 
-  {/* 2. Dark Overlay - MIDDLE LAYER */}
-  <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
+        {/* 1. Swiper Background - LOWEST LAYER */}
+        <div className="absolute inset-0 z-0">
+          <Swiper
+            modules={[Autoplay]}
+            effect="fade"
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop={true}
+            className="w-full h-full"
+          >
+            {heroImages.map((img, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  style={{
+                    backgroundImage: `url(${img})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: index === 0 ? "center center" : "center bottom",  // ← First image center, Second image bottom
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-  {/* 3. Content - TOP LAYER */}
-  <motion.div
-    className="relative z-20 max-w-9xl mx-auto px-6 lg:px-8 text-center"
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    variants={{
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-      },
-    }}
-  >
-    <motion.div
-      initial={{ width: 0 }}
-      animate={{ width: "160px" }}
-      transition={{ duration: 2.2, ease: "easeInOut" }}
-      style={{
-        margin: "0 auto 24px auto",
-        height: "2px",
-        background: C.gold,
-        opacity: 0.8,
-      }}
-    />
-    
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-      }}
-      style={{
-        fontFamily: "'Cinzel', serif",
-        color: "#9A7B2C",
-        fontSize: "20px",
-        letterSpacing: "0.2em",
-        marginBottom: "26px",
-        fontWeight: 600,
-      }}
-    >
-      GET IN TOUCH
-    </motion.div>
+        {/* 2. Dark Overlay - MIDDLE LAYER */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
 
-    <motion.h1
-      variants={{
-        hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
-        visible: {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
-        },
-      }}
-      style={{
-        fontFamily: "'Playfair Display', serif",
-        color: "#ffffff",
-        textShadow: "0 10px 40px rgba(0,0,0,0.6)",
-        fontSize: "clamp(36px, 8vw, 74px)",
-        fontWeight: 800,
-        lineHeight: "1.15",
-        marginBottom: "24px",
-      }}
-    >
-      Contact Us
-    </motion.h1>
+        {/* 3. Content - TOP LAYER */}
+        <motion.div
+          className="relative z-20 max-w-9xl mx-auto px-6 lg:px-8 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+            },
+          }}
+        >
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "160px" }}
+            transition={{ duration: 2.2, ease: "easeInOut" }}
+            style={{
+              margin: "0 auto 24px auto",
+              height: "2px",
+              background: C.gold,
+              opacity: 0.8,
+            }}
+          />
 
-    <motion.p
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 0.9, y: 0, transition: { duration: 1 } },
-      }}
-      style={{
-        color: "rgba(255,255,255,0.9)",
-        fontFamily: "'Inter', sans-serif",
-        fontSize: "19px",
-        maxWidth: "600px",
-        margin: "0 auto",
-        lineHeight: "1.8",
-        fontWeight: 300,
-      }}
-    >
-      We'd love to hear from you. Reach out with questions, membership
-      inquiries, or just to share your love of Brittanys.
-    </motion.p>
-
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "60px" }}
-      transition={{ delay: 2, duration: 1.5 }}
-      style={{
-        width: "1px",
-        background: "linear-gradient(to bottom, #9A7B2C, transparent)",
-        margin: "50px auto 0",
-      }}
-    />
-  </motion.div>
-</section>
-
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+            }}
+            style={{
+              fontFamily: "'Cinzel', serif",
+              color: "#9A7B2C",
+              fontSize: "20px",
+              letterSpacing: "0.2em",
+              marginBottom: "26px",
+              fontWeight: 600,
+            }}
+          >
+            GET IN TOUCH
+          </motion.div>
+          
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+              visible: {
+                opacity: 1,
+                y: 0,
+                filter: "blur(0px)",
+                transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] },
+              },
+            }}
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              color: "#ffffff",
+              textShadow: "0 10px 40px rgba(0,0,0,0.6)",
+              fontSize: "clamp(36px, 8vw, 74px)",
+              fontWeight: 800,
+              lineHeight: "1.15",
+              marginBottom: "24px",
+            }}
+          >
+            Contact Us
+          </motion.h1>
+          
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 0.9, y: 0, transition: { duration: 1 } },
+            }}
+            style={{
+              color: "rgba(255,255,255,0.9)",
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "19px",
+              maxWidth: "600px",
+              margin: "0 auto",
+              lineHeight: "1.8",
+              fontWeight: 300,
+            }}
+          >
+            We'd love to hear from you. Reach out with questions, membership
+            inquiries, or just to share your love of Brittanys.
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "60px" }}
+            transition={{ delay: 2, duration: 1.5 }}
+            style={{
+              width: "1px",
+              background: "linear-gradient(to bottom, #9A7B2C, transparent)",
+              margin: "50px auto 0",
+            }}
+          />
+        </motion.div>
+      </section>
+          
       {/* Contact Info Cards */}
       <section className="pt-16 pb-8 px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-20 overflow-hidden px-4">
@@ -303,11 +304,11 @@ export default function Contact() {
                   color: iconColor,
                   margin: "0 auto 24px",
                 }}
-
+              
               >
                 <Icon size={26} strokeWidth={1.5} />
               </div>
-
+              
               {/* Label - Cinzel Font */}
               <div
                 style={{
@@ -322,7 +323,7 @@ export default function Contact() {
               >
                 {label}
               </div>
-
+              
               {/* Value - Playfair Display */}
               <div
                 style={{
@@ -336,7 +337,7 @@ export default function Contact() {
               >
                 {value}
               </div>
-
+              
               {/* Subtext - Inter Font */}
               <div
                 style={{
@@ -349,7 +350,7 @@ export default function Contact() {
               >
                 {sub}
               </div>
-
+              
               {/* Subtle Hover Accent Line */}
               <motion.div
                 className="absolute bottom-0 left-0 right-0 h-[2px]"
@@ -360,7 +361,7 @@ export default function Contact() {
             </motion.div>
           ))}
         </div>
-
+        
         {/* Contact Form + Sidebar */}
         <div className="grid lg:grid-cols-1 gap-16 items-start">
           {/* --- Form Section with Animation --- */}
@@ -390,21 +391,27 @@ export default function Contact() {
                 marginBottom: "24px",
               }}
             />
-
             <div
-  style={{
-    fontFamily: "'Cinzel', serif",
-    color: "#9A7B2C",
-    fontSize: "32px",
-    fontWeight: 700,
-    letterSpacing: "0.05em",
-    marginBottom: "38px",
-    borderLeft: "4px solid #9A7B2C",
-    paddingLeft: "20px",
-  }}
->
-  SEND US A MESSAGE
-</div>
+              style={{
+                fontFamily: "'Cinzel', serif",
+                color: "#9A7B2C",
+                fontSize: "24px",
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                marginBottom: "38px",
+                borderLeft: "4px solid #9A7B2C",
+                paddingLeft: "20px",
+              }}
+            >
+              SEND US A MESSAGE
+              <div className="absolute top-14 md:top-4 right-8 z-20">
+                <img 
+                  src={logo} 
+                  alt="Northern Virginia Brittany Club Logo"
+                  className="h-18 w-auto md:h-32 lg:h-40 object-contain drop-shadow-lg rounded-lg border-t-4 border-b-4 border-amber-800"
+                />
+              </div>
+            </div>
             {submitted ? (
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}

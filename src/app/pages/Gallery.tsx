@@ -340,14 +340,14 @@ export default function Gallery() {
 
       {/* --- MAIN GALLERY SECTION --- */}
       <section className="relative pt-32 pb-24 w-full overflow-hidden">
-        {/* LOGO - TOP LEFT */}
- <div className="absolute top-8 left-8 z-20">
-  <img 
-    src={logo} 
-    alt="Northern Virginia Brittany Club Logo"
-    className="h-32 w-auto md:h-40 lg:h-48 object-contain drop-shadow-lg"
-  />
-</div>
+        {/* LOGO - TOP LEFT 
+        <div className="absolute top-8 left-8 z-20">
+          <img 
+            src={logo} 
+            alt="Northern Virginia Brittany Club Logo"
+            className="h-32 w-auto md:h-40 lg:h-48 object-contain drop-shadow-lg"
+          />
+        </div> */}
         {/* BACKGROUND GRADIENT */}
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#EAD9A0,#C9A84C,#8A6A1F)]" />
         {/* PAW PATTERN */}
@@ -373,60 +373,68 @@ export default function Gallery() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           {/* Editorial Heading */}
           {/* Editorial Heading - ENHANCED */}
-<div className="text-center mb-16">
-  {/* Animated gold bar */}
-  <motion.div
-    initial={{ width: 0 }}
-    whileInView={{ width: "80px" }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="h-[2px] bg-[#C9A84C] mx-auto mb-6"
-  />
-  
-  {/* COLLECTIONS with gold background */}
-  <div className="inline-block px-8 py-2 mb-4">
-    <div
-      className="text-[25px] md:text-[28px] lg:text-[32px] tracking-[0.3em] font-[600]"
-      style={{ 
-        color: "#C9A84C",
-        fontFamily: "'bold', serif",
-        letterSpacing: "0.3em",
-      }}
-    >
-      COLLECTIONS
-    </div>
-  </div>
-  
-  {/* Main heading with gold highlight */}
-  <h2
-    style={{
-      fontFamily: "'Playfair Display', serif",
-      color: "#1a1a2e",
-      fontSize: "clamp(36px, 5vw, 48px)",
-      fontWeight: 700,
-      marginBottom: "16px",
-    }}
-  >
-    Meet Our Members’ <span style={{ color: "aurora" }}>Brittanys</span>
-  </h2>
-  
-  {/* Enhanced CTA with icon */}
-  <div className="flex items-center justify-center gap-3 mt-6">
-    <div className="w-22 h-px bg-[#C9A84C]/50" />
-    <p
-      style={{
-        color: "#666",
-        fontFamily: "'bold', sans-serif",
-        fontSize: "24px",
-        fontWeight: 500,
-        letterSpacing: "0.5px",
-      }}
-    >
-      <b>🐾 Come Join The Fun! 🐾</b>
-    </p>
-    <div className="w-22 h-px bg-[#C9A84C]/50" />
-  </div>
-</div>
+          <div className="text-center mb-16">
+            {/* Animated gold bar */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "80px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="h-[2px] bg-[#C9A84C] mx-auto mb-6"
+            />
+
+            {/* COLLECTIONS with gold background */}
+            <div className="inline-block px-8 py-2 mb-4">
+              <div
+                className="text-[25px] md:text-[28px] lg:text-[32px] tracking-[0.3em] font-[600]"
+                style={{ 
+                  color: "#C9A84C",
+                  fontFamily: "'bold', serif",
+                  letterSpacing: "0.3em",
+                }}
+              >
+                COLLECTIONS
+              </div>
+            </div>
+              
+
+            <div className="absolute top-14 left-8 z-20">
+              <img 
+                src={logo} 
+                alt="Northern Virginia Brittany Club Logo"
+                className="h-24 w-auto md:h-32 lg:h-40 object-contain drop-shadow-lg rounded-lg border-t-4 border-b-4 border-amber-800"
+              />
+            </div>
+            {/* Main heading with gold highlight */}
+            <h2
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                color: "#1a1a2e",
+                fontSize: "clamp(36px, 5vw, 48px)",
+                fontWeight: 700,
+                marginBottom: "16px",
+              }}
+            >
+              Meet Our Members’ <span style={{ color: "aurora" }}>Brittanys</span>
+            </h2>
+            
+            {/* Enhanced CTA with icon */}
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <div className="w-22 h-px bg-[#C9A84C]/50" />
+              <p
+                style={{
+                  color: "#666",
+                  fontFamily: "'bold', sans-serif",
+                  fontSize: "24px",
+                  fontWeight: 500,
+                  letterSpacing: "0.5px",
+                }}
+              >
+                <b>🐾 Come Join The Fun! 🐾</b>
+              </p>
+              <div className="w-22 h-px bg-[#C9A84C]/50" />
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 px-6 py-16">
             {filtered.map((img, i) => (
