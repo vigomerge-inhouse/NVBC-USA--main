@@ -12,10 +12,11 @@ import "swiper/css/effect-fade";
 /* ─── Assets ─────────────────────────────────────────────────────── */
 import hero1 from "../../assets/images/gallery/Hero1.jpg";
 import hero2 from "../../assets/images/gallery/Hero2.jpg";
+import logo from "../../assets/images/logo.png";
 
 // gallery  shows images
 import shows1 from '../../assets/images/gallery/Gallery or Home Page or Why the Brittany.jpg';
-import shows2 from '../../assets/images/gallery/Gallery.10.jpg';
+import shows2 from '../../assets/images/gallery/Gallery.10.jpg'; 
 import shows3 from '../../assets/images/gallery/Gallery.JPG';
 import shows4 from '../../assets/images/gallery/Gallery.25.jpg';
 import shows5 from '../../assets/images/gallery/Gio.jpg';
@@ -339,7 +340,14 @@ export default function Gallery() {
 
       {/* --- MAIN GALLERY SECTION --- */}
       <section className="relative pt-32 pb-24 w-full overflow-hidden">
-
+        {/* LOGO - TOP LEFT */}
+ <div className="absolute top-8 left-8 z-20">
+  <img 
+    src={logo} 
+    alt="Northern Virginia Brittany Club Logo"
+    className="h-32 w-auto md:h-40 lg:h-48 object-contain drop-shadow-lg"
+  />
+</div>
         {/* BACKGROUND GRADIENT */}
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#EAD9A0,#C9A84C,#8A6A1F)]" />
         {/* PAW PATTERN */}
