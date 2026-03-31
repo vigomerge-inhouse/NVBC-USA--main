@@ -11,18 +11,18 @@ import Counter from "../components/Counter";
 
 
 /* trial popup photos */
-import specialty1 from "../../assets/images/trials/specialty1.png";
-import specialty2 from "../../assets/images/trials/specialty2.png";
+import specialty1 from "../../assets/images/trials/specialty1.jpg";
+import specialty2 from "../../assets/images/trials/specialty2.jpg";
 
 
 
-import field1 from "../../assets/images/trials/Field1.png";
-import field2 from "../../assets/images/trials/Field2.png";
+import field1 from "../../assets/images/trials/Field1.jpg";
+import field2 from "../../assets/images/trials/Field2.jpg";
 
-import agility1 from "../../assets/images/trials/agility1.png";
-import agility2 from "../../assets/images/trials/Agility2.png";
-import hunt1 from "../../assets/images/trials/Hunt1.png";
-import hunt2 from "../../assets/images/trials/Hunt2.png";
+import agility1 from "../../assets/images/trials/agility1.jpg";
+import agility2 from "../../assets/images/trials/Agility2.jpg";
+import hunt1 from "../../assets/images/trials/Hunt1.jpg";
+import hunt2 from "../../assets/images/trials/Hunt2.jpg";
 
 
 import heroImg from "../../assets/images/americanbrittany.jpg";//hero section 
