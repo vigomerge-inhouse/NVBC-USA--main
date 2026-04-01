@@ -12,7 +12,7 @@ import Counter from "../components/Counter";
 
 /* trial popup photos */
 import specialty1 from "../../assets/images/trials/specialty1.jpg";
-import specialty2 from "../../assets/images/trials/specialty2.jpg";
+import specialty2 from "../../assets/images/trials/specialty2.png";
 
 
 
@@ -1394,12 +1394,12 @@ export default function Home() {
                             style={{
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain", // image fit
+                              objectFit: "cover", // image fit
                             }}
                           />
 
                           {/* Caption Overlay */}
-                          <div
+                          {/* <div
                             style={{
                               position: "absolute",
                               bottom: 0,
@@ -1413,7 +1413,7 @@ export default function Home() {
                             }}
                           >
                             {photo.caption}
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>

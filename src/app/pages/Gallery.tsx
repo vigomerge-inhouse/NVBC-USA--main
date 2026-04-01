@@ -398,7 +398,7 @@ export default function Gallery() {
             </div>
               
 
-            <div className="absolute top-14 left-8 z-20">
+            <div className="hidden md:block absolute md:left-4 md:top-16 lg:top-14 lg:left-8 z-20">
               <img 
                 src={logo} 
                 alt="Northern Virginia Brittany Club Logo"
