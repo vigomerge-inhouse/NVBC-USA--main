@@ -76,7 +76,17 @@ export default function Contact() {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    let sanitizedValue = value;
+
+    if (name === "name") {
+      sanitizedValue = value.replace(/[^a-zA-Z\s]/g, "");
+    } 
+    else if (name === "email") {
+      sanitizedValue = value.replace(/[^a-zA-Z0-9@.]/g, "");
+    }
+
+    setForm({ ...form, [name]: sanitizedValue });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -122,10 +132,26 @@ export default function Contact() {
     fontWeight: "bold",
   };
 
+  // Form Validation according to USA
+  const handlePhoneChange = (e) => {
+    const input = e.target.value.replace(/\D/g, ''); // Sirf numbers rakho
+    const size = input.length;
+
+    // Auto-formatting: (123) 456-7890
+    let formattedPhone = input;
+    if (size > 0) {
+      formattedPhone = `(${input.slice(0, 3)}`;
+      if (size > 3) formattedPhone += `) ${input.slice(3, 6)}`;
+      if (size > 6) formattedPhone += `-${input.slice(6, 10)}`;
+    }
+
+    setForm({ ...form, phone: formattedPhone });
+  };
+
+
   return (
     <div style={{ background: "#FAF9F6", minHeight: "100vh" }}>
       {/* Page Header */}
-     {/* Page Header */}
       <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
 
         {/* 1. Swiper Background - LOWEST LAYER */}
@@ -330,7 +356,6 @@ export default function Contact() {
               }}
             >
               {/* Icon Circle */}
-              {/* Icon Circle */}
               <div
                 style={{
                   width: "64px",
@@ -467,31 +492,36 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
-                {/* Account Section */}
-                <div className="mb-10 border-b border-gray-100 pb-8">
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="relative">
-
-
-                    </div>
-                    <div>
-
-                    </div>
-                  </div>
-                </div>
-
                 {/* Personal Section */}
                 <div className="grid grid-cols-1 gap-4 mb-4">
+                  {/* Account Section */}
+
+                  <div className="mb-10 border-b border-gray-100 pb-8">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="relative">
+
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+                  </div>
                   <div>
                     <label style={labelStyle}>Full Name *</label>
                     <input
                       name="name"
                       required
+                      minLength={2}
+                      maxLength={30}
                       value={form.name}
                       onChange={handleChange}
                       style={inputStyle}
                       placeholder="Full Name"
+                      onKeyPress={(e) => {
+                        if (!/[a-zA-Z\s]/.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
                     />
                   </div>
                   <div>
@@ -500,6 +530,7 @@ export default function Contact() {
                       name="email"
                       type="email"
                       required
+                      pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}"
                       value={form.email}
                       onChange={handleChange}
                       style={inputStyle}
@@ -507,20 +538,23 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-
+                          
                 <div className="grid grid-cols-1 gap-4 mb-4">
                   <div>
                     <label style={labelStyle}>Phone (Optional)</label>
                     <input
                       name="phone"
+                      type="tel"
+                      pattern="\(\d{3}\) \d{3}-\d{4}" 
+                      title="Format: (123) 456-7890"
                       value={form.phone}
-                      onChange={handleChange}
+                      onChange={handlePhoneChange}
                       style={inputStyle}
                       placeholder="(000) 000-0000"
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>subject</label>
+                    <label style={labelStyle}>Subject</label>
                     <select
                       name="department"
                       value={form.department}
@@ -535,21 +569,19 @@ export default function Contact() {
                     </select>
                   </div>
                 </div>
-
-
-
+                    
                 <div className="mb-6">
                   <label style={labelStyle}>Message *</label>
                   <textarea
                     name="message"
                     required
+                    minLength={10} // Taki bahut chota message na ho
                     value={form.message}
                     onChange={handleChange}
                     rows={6}
                     style={{ ...inputStyle, resize: "vertical" }}
                   />
                 </div>
-
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -580,36 +612,36 @@ export default function Contact() {
           </motion.div>
 
           {/* --- Sidebar Section with Animation --- */}
-         <motion.div
-  initial={{ opacity: 0, x: 20 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.2 }}
->
-  {/* Add card wrapper */}
-  <div
-    style={{
-      background: "#FDF8F0",
-      borderRadius: "32px",
-      padding: "40px",
-      boxShadow: "0 30px 60px -20px rgba(0,0,0,0.1)",
-    }}
-  >
-    <div
-      style={{
-        fontFamily: "'Cinzel', serif",
-        color: "#9A7B2C",
-        fontSize: "32px",
-        fontWeight: 700,
-        letterSpacing: "0.05em",
-        marginBottom: "24px",
-        borderLeft: "4px solid #9A7B2C",
-        paddingLeft: "20px",
-      }}
-    >
-      MEET US
-    </div>
-    </div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {/* Add card wrapper */}
+            <div
+              style={{
+                background: "#FDF8F0",
+                borderRadius: "32px",
+                padding: "40px",
+                boxShadow: "0 30px 60px -20px rgba(0,0,0,0.1)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  color: "#9A7B2C",
+                  fontSize: "32px",
+                  fontWeight: 700,
+                  letterSpacing: "0.05em",
+                  marginBottom: "24px",
+                  borderLeft: "4px solid #9A7B2C",
+                  paddingLeft: "20px",
+                }}
+              >
+                MEET US
+              </div>
+            </div>
     
             {/* <div
               style={{

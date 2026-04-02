@@ -388,7 +388,7 @@ export default function About() {
             {/* Gold Line */}
             <motion.div
               initial={{ width: 0 }}
-              whileInView={{ width: "600px" }}
+              whileInView={{ width: "300px" }}
               transition={{ duration: 1, delay: 0.5 }}
               style={{
                 height: "4px",

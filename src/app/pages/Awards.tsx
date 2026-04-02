@@ -9,9 +9,7 @@ import "swiper/css/effect-fade";
 
 import brittanyHero from "../../assets/images/annual-awards/AnnualAwardHero.jpg";
 import brittanyAward from "../../assets/images/annual-awards/stewert.jpg";
-// import brittanyField from "../../assets/images/annual-awards/brittany-field.jpg";
-// import brittanyAgility from "../../assets/images/annual-awards/brittany-agility.jpg";
-// import brittanyShow from "../../assets/images/annual-awards/brittany-show.jpg";
+
 
 import Sammi from '../../assets/images/annual-awards/Summy.jpg';
 import Ty from '../../assets/images/annual-awards/Ty.jpg';
@@ -1223,7 +1221,7 @@ export default function Awards() {
             style={{
               fontFamily: "'bold', serif",
               color: "black",
-              fontSize: "23px",
+              fontSize: "clamp(16px, 4vw, 23px)", 
               letterSpacing: "0.1em",
               marginTop: "40px",
               marginBottom: "40px",
@@ -1639,7 +1637,7 @@ export default function Awards() {
         />
 
         <motion.div
-          className="max-w-4xl mx-auto px-6 relative z-10"
+          className="max-w-5xl mx-auto px-6 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -1685,7 +1683,7 @@ export default function Awards() {
               color: "rgba(255,255,255,0.75)", // Thoda bright kiya taaki Navy par saaf dikhe
               fontSize: "18px",
               lineHeight: "1.9",
-              maxWidth: "700px",
+              maxWidth: "740px",
               margin: "0 auto",
               fontWeight: 300,
             }}

@@ -12,7 +12,7 @@ import Counter from "../components/Counter";
 
 /* trial popup photos */
 import specialty1 from "../../assets/images/trials/specialty1.jpg";
-import specialty2 from "../../assets/images/trials/specialty2.jpg";
+import specialty2 from "../../assets/images/trials/specialty2.png";
 
 
 
@@ -545,10 +545,22 @@ export default function Home() {
           {showPopup && (
             <div 
               style={{
-                position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-                backgroundColor: 'rgba(0,0,0,0.85)', zIndex: 1000,
-                display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px',
+                position: 'fixed', 
+                top: 0, 
+                left: 0, 
+                width: '100%', 
+                height: '100%',
+                backgroundColor: 'rgba(0,0,0,0.85)', 
+                zIndex: 1000,
+                            
+                display: 'flex', 
+                flexDirection: 'column',
+                alignItems: 'center',    
+                justifyContent: 'flex-start',
+
+                padding: '40px 20px',
                 backdropFilter: 'blur(4px)',
+                overflowY: 'auto',
               }}
             >
               {/* Inner Card - SMALLER SIZE */}
@@ -1394,12 +1406,12 @@ export default function Home() {
                             style={{
                               width: "100%",
                               height: "100%",
-                              objectFit: "contain", // image fit
+                              objectFit: "cover", // image fit
                             }}
                           />
 
                           {/* Caption Overlay */}
-                          <div
+                          {/* <div
                             style={{
                               position: "absolute",
                               bottom: 0,
@@ -1413,7 +1425,7 @@ export default function Home() {
                             }}
                           >
                             {photo.caption}
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>

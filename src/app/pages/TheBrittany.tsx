@@ -271,7 +271,7 @@ export default function WhyBrittany() {
 
       {/* SECTION 2: BREED PROFILE (Left Aligned Content) */}
       <section className="py-32 px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-20 items-start">
           <div>
             {/* Gold Liner */}
             <motion.div
@@ -431,7 +431,7 @@ export default function WhyBrittany() {
           </div>
 
           <div
-            className="relative h-[600px] hidden lg:block"
+            className="relative h-[600px] lg:block"
             style={{ perspective: "1500px" }}
           >
             <div
@@ -782,16 +782,16 @@ export default function WhyBrittany() {
               maxWidth: "600px",
             }}
           >
-           For inquiries about available litters and breeder referrals, please contact our NVBC Committee Chair,{" "}
-  <strong>Kat Shannon</strong>{" "}
-  directly at{" "}
-  <a
-    href="mailto:kstarbrits@gmail.com"
-    style={{ color: "#F7B80B", textDecoration: "underline" }}
-  >
-    kstarbrits@gmail.com
-  </a>
-</motion.p>
+            For inquiries about available litters and breeder referrals, please contact our NVBC Committee Chair,{" "}
+            <strong>Kat Shannon</strong>{" "}
+            directly at{" "}
+            <a
+              href="mailto:kstarbrits@gmail.com"
+              style={{ color: "#F7B80B", textDecoration: "underline" }}
+            >
+              kstarbrits@gmail.com
+            </a>
+          </motion.p>
 
           <motion.div
             variants={fadeUpVariants}
@@ -849,7 +849,7 @@ export default function WhyBrittany() {
         </motion.div>
 
       </section>
-      {showVideo && (
+      {/* {showVideo && (
         <div
           onClick={() => setShowVideo(false)}
           style={{
@@ -872,9 +872,27 @@ export default function WhyBrittany() {
               maxWidth: "900px",
               aspectRatio: "16/9",
               background: "#000",
+              position: "relative",
             }}
           >
-            {/* ✅ LOCAL VIDEO (CORRECT) */}
+            <button
+              onClick={() => setShowVideo(false)}
+              style={{
+                position: "absolute",
+                top: "-40px",    
+                right: "0px",      
+                background: "none",
+                border: "none",
+                color: "white",
+                fontSize: "30px",
+                cursor: "pointer",
+                fontWeight: "bold",
+                padding: "5px",
+              }}
+            >
+              &times;
+            </button>
+            
             <video
               width="100%"
               height="100%"
@@ -882,11 +900,74 @@ export default function WhyBrittany() {
               autoPlay
               style={{ objectFit: "cover" }}
             >
-              <source
-                src={resourceVideo}
-                type="video/mp4"
-              />
-
+              <source src={resourceVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      )} */}
+      {showVideo && (
+        <div
+          onClick={() => setShowVideo(false)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.9)", // Darker background for focus
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+            padding: "10px", // Mobile par safe gap ke liye
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "100%",
+              maxWidth: "900px",
+              maxHeight: "85vh", 
+              background: "#000",
+              position: "relative",
+              borderRadius: "8px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <button
+              onClick={() => setShowVideo(false)}
+              style={{
+                position: "absolute",
+                top: "-45px", // Video ke upar set kiya gaya hai
+                right: "0px",
+                background: "none",
+                border: "none",
+                color: "white",
+                fontSize: "35px",
+                cursor: "pointer",
+                fontWeight: "300", // Taki 'x' clean dikhe
+                zIndex: 10001,
+              }}
+            >
+              &times;
+            </button>
+            
+            <video
+              key={resourceVideo} // Video source change hone par reload karega
+              controls
+              autoPlay
+              playsInline // Mobile browsers ke liye zaroori
+              style={{
+                width: "100%",
+                height: "auto", // Height auto taaki ratio na bigde
+                maxHeight: "85vh",
+                objectFit: "contain", // ✅ Sabse zaroori: Video crop nahi hogi
+                display: "block",
+              }}
+            >
+              <source src={resourceVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
