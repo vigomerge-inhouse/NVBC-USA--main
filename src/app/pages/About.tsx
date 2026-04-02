@@ -892,7 +892,7 @@ export default function About() {
                 fontWeight: 700,
               }}
             >
-             Northern Virginia Board of Directors
+             Our Board of Directors
             </motion.h2>
           </motion.div>
 
