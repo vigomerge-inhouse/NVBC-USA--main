@@ -271,7 +271,7 @@ export default function WhyBrittany() {
 
       {/* SECTION 2: BREED PROFILE (Left Aligned Content) */}
       <section className="py-32 px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-20 items-start">
           <div>
             {/* Gold Liner */}
             <motion.div
@@ -431,7 +431,7 @@ export default function WhyBrittany() {
           </div>
 
           <div
-            className="relative h-[600px] hidden lg:block"
+            className="relative h-[600px] lg:block"
             style={{ perspective: "1500px" }}
           >
             <div

@@ -545,10 +545,22 @@ export default function Home() {
           {showPopup && (
             <div 
               style={{
-                position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-                backgroundColor: 'rgba(0,0,0,0.85)', zIndex: 1000,
-                display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px',
+                position: 'fixed', 
+                top: 0, 
+                left: 0, 
+                width: '100%', 
+                height: '100%',
+                backgroundColor: 'rgba(0,0,0,0.85)', 
+                zIndex: 1000,
+                            
+                display: 'flex', 
+                flexDirection: 'column',
+                alignItems: 'center',    
+                justifyContent: 'flex-start',
+
+                padding: '40px 20px',
                 backdropFilter: 'blur(4px)',
+                overflowY: 'auto',
               }}
             >
               {/* Inner Card - SMALLER SIZE */}
