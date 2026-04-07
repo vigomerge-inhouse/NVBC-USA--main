@@ -59,7 +59,8 @@ export function Header() {
               <img
                 src={imgLogo}
                 alt="NVBC Logo"
-                className="w-18 h-18 lg:w-20 lg:h-20 object-contain rounded-full"
+                //className="w-12 h-18 lg:w-20 lg:h-20 object-contain rounded-full"
+                className="h-14 lg:h-18 w-auto object-contain rounded-full"
               />
             </div>
            
