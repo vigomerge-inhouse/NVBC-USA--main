@@ -6,7 +6,7 @@ const footerLinks = [
   {
     title: "Quick Links",
     links: [
-     { label: "Home", path: "/" },
+      { label: "Home", path: "/" },
       { label: "About NVBC", path: "/about-nvbc" },
       { label: "The Brittany", path: "/why-a-brittany" },
       { label: "Events", path: "/calendar" },
@@ -40,15 +40,16 @@ export function Footer() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+         <div className="md:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-6 justify-center sm:justify-start">
               <img
                 src={imgLogo}
                 alt="NVBC Logo"
-                className="w-16 h-16 object-contain rounded-full" 
+                className="w-14 h-14 md:w-16 md:h-16 object-contain rounded-full"
+
                 style={{ filter: "drop-shadow(0 0 8px rgba(201,168,76,0.4))" }}
               />
               <div>
@@ -60,9 +61,11 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            
+
+
+        
             {/* Socials */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 justify-center sm:justify-start mt-0">
               {[
                 { Icon: Facebook, href: "https://www.facebook.com/NorthernVirginiaBrittanyClubNvbc" },
                 // { Icon: Instagram, href: "#" },
@@ -94,7 +97,7 @@ export function Footer() {
                     (e.currentTarget as HTMLAnchorElement).style.color = "rgba(201,168,76,0.7)";
                     (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.35)";
                   }}
-                  // className="ml-8"
+                // className="ml-8"
                 >
                   <div>
                     <Icon size={14} />
@@ -106,7 +109,8 @@ export function Footer() {
 
           {/* Links */}
           {footerLinks.map((col) => (
-            <div key={col.title}>
+             <div key={col.title} className="text-center md:text-left">
+            
               <h4
                 style={{
                   fontFamily: "'Cinzel', serif",
@@ -119,7 +123,7 @@ export function Footer() {
               >
                 {col.title}
               </h4>
-              <ul className="flex flex-col gap-3 w-fit">
+              <ul className="flex flex-col gap-3 ">
                 {col.links.map((link) => (
                   <li key={link.path}>
                     <Link
@@ -149,8 +153,8 @@ export function Footer() {
             </div>
           ))}
 
-         
-            
+
+
         </div>
 
         {/* Divider */}
