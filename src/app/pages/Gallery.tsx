@@ -50,9 +50,14 @@ import gallery26 from "../../assets/images/gallery/gallery26.jpg";
 import gallery27 from "../../assets/images/gallery/gallery27.jpg";
 import gallery28 from "../../assets/images/gallery/gallery28.jpg";
 import gallery29 from "../../assets/images/gallery/gallery29.png";
+import gallery33 from "../../assets/images/gallery/gallery33.JPG";
+import gallery34 from "../../assets/images/gallery/gallery34.JPG";
+import gallery35 from "../../assets/images/gallery/gallery35.JPG";
 import gallery30 from "../../assets/images/gallery/gallery30.jpg";
 import gallery31 from "../../assets/images/gallery/gallery31.jpg";
 import gallery32 from "../../assets/images/gallery/gallery32.jpg";
+
+
 
 const heroImages = [portrait, hero1, hero2];
 
@@ -196,6 +201,21 @@ const images: GalleryImage[] = [
   },
   {
     src: gallery32,
+    title: "",
+    cat: ""
+  },
+  {
+    src: gallery33,
+    title: "",
+    cat: ""
+  },
+   {
+    src: gallery34,
+    title: "",
+    cat: ""
+  },
+   {
+    src: gallery35,
     title: "",
     cat: ""
   },
