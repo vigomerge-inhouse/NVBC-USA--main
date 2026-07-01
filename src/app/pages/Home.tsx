@@ -18,6 +18,9 @@ import specialty2 from "../../assets/images/trials/specialty2.png";
 
 import field1 from "../../assets/images/trials/Field1.jpg";
 import field2 from "../../assets/images/trials/Field2.jpg";
+import field3 from "../../assets/images/trials/Field3.jpg";
+import field4 from "../../assets/images/trials/Field4.jpg";
+import field5 from "../../assets/images/trials/Field5.jpg";
 
 import agility1 from "../../assets/images/trials/agility1.jpg";
 import agility2 from "../../assets/images/trials/Agility2.jpg";
@@ -138,6 +141,10 @@ const trials = [
     photos: [
       { src: field1, caption: "Brittany on point during a Senior Hunter test" },
       { src: field2, caption: "Handler and dog working a bird field in Culpeper" },
+      {src: field3, caption: ""},
+      {src: field4, caption: ""},
+      {src: field5, caption: ""},
+
 
     ],
   },
