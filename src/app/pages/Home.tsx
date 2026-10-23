@@ -65,7 +65,7 @@ const goldGrad = `linear-gradient(135deg, ${C.gold}, ${C.goldLight})`;
 /* ─── Data ──────────────────────────────────────────────────────────── */
 const stats = [
   { value: "53+", label: "Years of Excellence" },
-  { value: "52+", label: "Active Members" },
+  { value: "55+", label: "Active Members" },
   {
     value: "102+",
     label: "New AKC titles",
@@ -141,9 +141,9 @@ const trials = [
     photos: [
       { src: field1, caption: "Brittany on point during a Senior Hunter test" },
       { src: field2, caption: "Handler and dog working a bird field in Culpeper" },
-      {src: field3, caption: ""},
-      {src: field4, caption: ""},
       {src: field5, caption: ""},
+      {src: field4, caption: ""},
+      {src: field3, caption: ""},
 
 
     ],
@@ -1381,10 +1381,9 @@ export default function Home() {
                 >
                   PHOTO GALLERY
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-6 gap-4">
                   {trials[activeTrial].photos.map((photo, i) => (
-                    <div
-                      key={i}
+                    <div key={i} className={i < 2 ? "col-span-1 sm:col-span-3" : "col-span-1 sm:col-span-2"}
                       style={{
                         borderRadius: "4px",
                         overflow: "hidden",
